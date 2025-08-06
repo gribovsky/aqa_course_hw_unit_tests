@@ -15,5 +15,17 @@
 
 let resultUnique;
 let resultNull;
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
+for (let i = 0; i < competitorPizzas.length; i++) {
+  competitorPizzas[i] = competitorPizzas[i].toLowerCase();
+}
 
+resultUnique = [];
+for (let i = 0; i < myPizzasT1.length; i++) {
+  if (!competitorPizzas.includes(myPizzasT1[i].toLowerCase())) {
+    resultUnique.push(myPizzasT1[i]);
+  }
+  if (!resultUnique.length) resultNull = null;
+}
 export { resultNull, resultUnique };
