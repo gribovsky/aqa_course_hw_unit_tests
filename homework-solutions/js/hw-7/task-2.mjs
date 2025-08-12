@@ -40,7 +40,7 @@ function findLongestWords(sentence) {
       maxLength = i.length;
     }
   }
-  // console.log(maxLength);
+
   for (const i of sentenceNoSpace) {
     if (i.length === maxLength) {
       longestWordArray.push(i);
