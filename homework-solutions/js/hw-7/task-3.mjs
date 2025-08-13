@@ -9,7 +9,13 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  let sum = 0;
+  while (number >= 1) {
+    sum += number % 10;
+    number = Math.floor(number / 10);
+  }
+  if (sum <= 9) {
+    return sum;
+  } else return digitalRoot(sum);
 }
-
 export { digitalRoot };
