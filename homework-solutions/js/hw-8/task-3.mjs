@@ -8,6 +8,12 @@
 
 function findMissingNumber(numbers) {
   // Ваш код
+  return [...numbers]
+    .sort((a, b) => a - b)
+    .reduce((res, el, ind, arr) => {
+      if (arr[ind - 1] !== el - 1) res = el - 1;
+      return res !== 0 ? res : arr[arr.length - 1] + 1;
+    }, 0);
 }
 
 export { findMissingNumber };
