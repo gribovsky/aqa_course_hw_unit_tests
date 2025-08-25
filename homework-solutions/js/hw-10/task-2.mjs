@@ -9,6 +9,18 @@
 
 function countOccurrences(arr) {
   // ваш код
+  const arrSet = [...new Set(arr)];
+  const result = {};
+  for (const i of arrSet) {
+    let counter = 0;
+    for (const j of arr) {
+      if (i === j) {
+        counter += 1;
+      }
+    }
+    result[i] = counter;
+  }
+  return result;
 }
 
 export { countOccurrences };
