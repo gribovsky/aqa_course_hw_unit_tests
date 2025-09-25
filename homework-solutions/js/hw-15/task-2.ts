@@ -17,3 +17,38 @@
     - Реализует метода getDetails, возвращающего строку: "{make} {model}, {year}".
 4. Создайте объект класса Car и проверьте работоспособность
  */
+
+interface IVehicle {
+  getDetails(): string;
+  start(): string;
+}
+
+abstract class Vehicle implements IVehicle {
+  constructor(
+    protected make: string,
+    protected model: string,
+  ) {}
+  public start(): string {
+    return `The vehicle ${this.make} ${this.model} is starting.`;
+  }
+
+  abstract getDetails(): string;
+}
+
+class Car extends Vehicle {
+  constructor(
+    make: string,
+    model: string,
+    private year: number,
+  ) {
+    super(make, model);
+  }
+
+  getDetails(): string {
+    return `${this.make} ${this.model}, ${this.year}`;
+  }
+}
+
+const myCar = new Car('Chery', 'QQ', 2011);
+console.log(myCar.start());
+console.log(myCar.getDetails());
